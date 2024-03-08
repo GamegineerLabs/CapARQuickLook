@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Browser } from '@capacitor/browser';
 
 @Component({
   selector: 'app-home',
@@ -8,5 +9,18 @@ import { Component } from '@angular/core';
 export class HomePage {
 
   constructor() {}
+
+  async openAR(item: string) {
+    if (item == "guitar") {
+      await Browser.open({ url: 'https://gamegineerlabshelpfulfiles.s3.us-west-2.amazonaws.com/fender_stratocaster.usdz', presentationStyle: 'popover'});
+    } else {
+      await Browser.open({ url: 'https://gamegineerlabshelpfulfiles.s3.us-west-2.amazonaws.com/CosmonautSuit_en.reality', presentationStyle: 'popover'});
+    }
+
+  }
+
+  async applePay() {
+    await Browser.open({ url: 'http://arquicklookwebsite.s3-website-us-west-2.amazonaws.com/', presentationStyle: 'popover'});
+  }
 
 }
